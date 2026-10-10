@@ -1,0 +1,11 @@
+torch>=2.3
+numpy
+tokenizers>=0.15
+datasets
+matplotlib
+tqdm
+pyyaml
+fastapi
+uvicorn[standard]
+httpx
+pytest

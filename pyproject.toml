@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tinygpt"
+version = "0.1.0"
+description = "A GPT-style LLM written from scratch: train, quantize, serve, benchmark."
+requires-python = ">=3.10"
+dependencies = ["torch>=2.3", "numpy", "tokenizers>=0.15"]
+
+[project.optional-dependencies]
+train = ["datasets", "matplotlib", "tqdm"]
+serve = ["fastapi", "uvicorn[standard]", "httpx"]
+dev = ["pytest", "httpx", "fastapi", "uvicorn"]
+
+[tool.setuptools.packages.find]
+include = ["tinygpt*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
