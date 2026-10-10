@@ -46,6 +46,7 @@ def main():
     out.mkdir(parents=True, exist_ok=True)
     ns_tr, nt_tr = tokenize_split(tok, a.source, "train", out / "train.bin", a.max_train_stories)
     ns_va, nt_va = tokenize_split(tok, a.source, "validation", out / "val.bin", a.max_val_stories)
+    assert nt_tr > 0 and nt_va > 0, "no tokens produced: check --source / iter_stories"
     meta = dict(vocab_size=tok.get_vocab_size(), eot_id=tok.token_to_id(EOT),
                 train_stories=ns_tr, train_tokens=nt_tr, val_stories=ns_va, val_tokens=nt_va)
     (out / "meta.json").write_text(json.dumps(meta, indent=2))
