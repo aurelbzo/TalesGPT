@@ -21,11 +21,14 @@ def main():
         initial_alphabet=pre_tokenizers.ByteLevel.alphabet(),
         show_progress=True,
     )
-    tok.train_from_iterator(iter_stories(a.source, "train", a.max_stories), trainer=trainer)
+    stories = list(iter_stories(a.source, "train", a.max_stories))
+    print(f"loaded {len(stories)} stories")
+    tok.train_from_iterator(stories, trainer=trainer, length=len(stories))
     Path(a.out).parent.mkdir(parents=True, exist_ok=True)
     tok.save(a.out)
     print(f"saved {a.out}: vocab={tok.get_vocab_size()} eot_id={tok.token_to_id(EOT)}")
     s = "Once upon a time, a little girl named Lily had a red ball."
+    assert all(s.strip() for s in iter_stories("data/smoke/toy", "train"))
     ids = tok.encode(s).ids
     print(f"sanity: {len(ids)} tokens -> {tok.decode(ids)!r}")
 

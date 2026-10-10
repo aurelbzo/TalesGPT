@@ -1,0 +1,92 @@
+{
+  "results": {
+    "runs/smoke/best.pt": {
+      "n": 60,
+      "success_rate": 0.11666666666666667,
+      "all_words_rate": 0.16666666666666666,
+      "word_hit_rate": 0.5888888888888889,
+      "dialogue_ok_rate": 0.65,
+      "avg_tokens": 84.33333333333333
+    },
+    "runs/smoke_sft/best.pt": {
+      "n": 60,
+      "success_rate": 0.48333333333333334,
+      "all_words_rate": 0.48333333333333334,
+      "word_hit_rate": 0.7833333333333333,
+      "dialogue_ok_rate": 1.0,
+      "avg_tokens": 51.35
+    }
+  },
+  "examples": {
+    "runs/smoke/best.pt": [
+      {
+        "prompt": "Write a short story.\nWords: played, home, felt\nDialogue: yes\nStory:\n",
+        "story": " said Tom. \"It is so nice,\" said the dog. They played together until the sun went down. \"It is so nice,\" said the river with a little cat. \"Look at this cake and felt very brave. \"It is so nice,\" said the beach with a little dog. \"Look at this boat and felt very brave. \"It is so nice,\" said the cat. They played together until the",
+        "result": {
+          "word_hits": 2,
+          "n_words": 3,
+          "all_words": false,
+          "dialogue_ok": true,
+          "success": false
+        }
+      },
+      {
+        "prompt": "Write a short story.\nWords: home, played, together\nDialogue: no\nStory:\n",
+        "story": ". They played together until the sun went down. They played together until the sun went down. \"It is so nice,\" said the cat. They played together until the sun went down. \"It is so nice,\" said the park with a little bird. \"Look at this drum and felt very tired. \"It is so nice,\" said the duck. They played together until the sun went down. \"It is so",
+        "result": {
+          "word_hits": 2,
+          "n_words": 3,
+          "all_words": false,
+          "dialogue_ok": false,
+          "success": false
+        }
+      },
+      {
+        "prompt": "Write a short story.\nWords: park, little, nice\nDialogue: yes\nStory:\n",
+        "story": " said Lily. \"It is so nice,\" said the park with a little cat. They played together until the sun went down. \"Look at this drum!\" said Anna. \"It is so nice,\" said the dog. They played together until the sun went to the sun went down. \"It is so nice,\" said the cat. They played together until the sun went down. \"Look at this drum!\" said Lily",
+        "result": {
+          "word_hits": 3,
+          "n_words": 3,
+          "all_words": true,
+          "dialogue_ok": true,
+          "success": true
+        }
+      }
+    ],
+    "runs/smoke_sft/best.pt": [
+      {
+        "prompt": "Write a short story.\nWords: played, home, felt\nDialogue: yes\nStory:\n",
+        "story": "One day, Sara went to the river with a little dog. Sara found a big ball and felt very happy. \"Look at this hat!\" said Sara. \"It is so nice,\" said the frog. They played together until the sun went down. Then Sara went home and smiled.",
+        "result": {
+          "word_hits": 3,
+          "n_words": 3,
+          "all_words": true,
+          "dialogue_ok": true,
+          "success": true
+        }
+      },
+      {
+        "prompt": "Write a short story.\nWords: home, played, together\nDialogue: no\nStory:\n",
+        "story": "One day, Leo went to the river with a little bird. Leo found a big ball and felt very excited. They played together until the sun went down. Then Leo went home and smiled.",
+        "result": {
+          "word_hits": 3,
+          "n_words": 3,
+          "all_words": true,
+          "dialogue_ok": true,
+          "success": true
+        }
+      },
+      {
+        "prompt": "Write a short story.\nWords: park, little, nice\nDialogue: yes\nStory:\n",
+        "story": "One day, Tom went to the river with a little duck. Tom found a big boat and felt very tired. \"Look at this ball!\" said Tom. \"It is so nice,\" said the bird. They played together until the sun went down. Then Tom went home and smiled.",
+        "result": {
+          "word_hits": 2,
+          "n_words": 3,
+          "all_words": false,
+          "dialogue_ok": true,
+          "success": false
+        }
+      }
+    ]
+  }
+}

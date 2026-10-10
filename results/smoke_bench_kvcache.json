@@ -1,0 +1,62 @@
+[
+  {
+    "device": "cpu",
+    "prompt_len": 16,
+    "new_tokens": 48,
+    "kv_cache": false,
+    "batch": 1,
+    "ttft_ms": 0.6,
+    "decode_tok_s": 1674.1,
+    "kv_cache_mb": 0.0
+  },
+  {
+    "device": "cpu",
+    "prompt_len": 16,
+    "new_tokens": 48,
+    "kv_cache": true,
+    "batch": 1,
+    "ttft_ms": 0.7,
+    "decode_tok_s": 2374.7,
+    "kv_cache_mb": 0.3
+  },
+  {
+    "device": "cpu",
+    "prompt_len": 16,
+    "new_tokens": 48,
+    "kv_cache": true,
+    "batch": 8,
+    "ttft_ms": 1.7,
+    "decode_tok_s": 13142.4,
+    "kv_cache_mb": 2.1
+  },
+  {
+    "device": "cpu",
+    "prompt_len": 64,
+    "new_tokens": 48,
+    "kv_cache": false,
+    "batch": 1,
+    "ttft_ms": 1.0,
+    "decode_tok_s": 1047.0,
+    "kv_cache_mb": 0.0
+  },
+  {
+    "device": "cpu",
+    "prompt_len": 64,
+    "new_tokens": 48,
+    "kv_cache": true,
+    "batch": 1,
+    "ttft_ms": 0.8,
+    "decode_tok_s": 2400.5,
+    "kv_cache_mb": 0.3
+  },
+  {
+    "device": "cpu",
+    "prompt_len": 64,
+    "new_tokens": 48,
+    "kv_cache": true,
+    "batch": 8,
+    "ttft_ms": 4.3,
+    "decode_tok_s": 12206.4,
+    "kv_cache_mb": 2.1
+  }
+]

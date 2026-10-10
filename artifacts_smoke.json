@@ -1,0 +1,49 @@
+{
+  "results": {
+    "runs/smoke_sft/best.pt": {
+      "n": 100,
+      "success_rate": 0.48,
+      "all_words_rate": 0.48,
+      "word_hit_rate": 0.7933333333333333,
+      "dialogue_ok_rate": 1.0,
+      "avg_tokens": 51.35
+    }
+  },
+  "examples": {
+    "runs/smoke_sft/best.pt": [
+      {
+        "prompt": "Write a short story.\nWords: played, home, felt\nDialogue: yes\nStory:\n",
+        "story": "One day, Sara went to the river with a little dog. Sara found a big ball and felt very happy. \"Look at this hat!\" said Sara. \"It is so nice,\" said the frog. They played together until the sun went down. Then Sara went home and smiled.",
+        "result": {
+          "word_hits": 3,
+          "n_words": 3,
+          "all_words": true,
+          "dialogue_ok": true,
+          "success": true
+        }
+      },
+      {
+        "prompt": "Write a short story.\nWords: home, played, together\nDialogue: no\nStory:\n",
+        "story": "One day, Leo went to the river with a little bird. Leo found a big ball and felt very excited. They played together until the sun went down. Then Leo went home and smiled.",
+        "result": {
+          "word_hits": 3,
+          "n_words": 3,
+          "all_words": true,
+          "dialogue_ok": true,
+          "success": true
+        }
+      },
+      {
+        "prompt": "Write a short story.\nWords: park, little, nice\nDialogue: yes\nStory:\n",
+        "story": "One day, Tom went to the river with a little duck. Tom found a big boat and felt very tired. \"Look at this ball!\" said Tom. \"It is so nice,\" said the bird. They played together until the sun went down. Then Tom went home and smiled.",
+        "result": {
+          "word_hits": 2,
+          "n_words": 3,
+          "all_words": false,
+          "dialogue_ok": true,
+          "success": false
+        }
+      }
+    ]
+  }
+}

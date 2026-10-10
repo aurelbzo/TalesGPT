@@ -1,0 +1,18 @@
+{
+  "config": {
+    "vocab_size": 442,
+    "n_layer": 2,
+    "n_head": 4,
+    "d_model": 128,
+    "max_seq_len": 128,
+    "hidden_dim": 384,
+    "rope_theta": 10000.0,
+    "norm_eps": 1e-05
+  },
+  "params_m": 0.4832,
+  "source_ckpt": "runs/smoke_sft/best.pt",
+  "fp32_mem_mb": 1.949184,
+  "int8_mem_mb": 0.682496,
+  "model_fp32.pt_file_mb": 1.938997,
+  "model_int8.pt_file_mb": 0.674549
+}

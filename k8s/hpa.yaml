@@ -1,0 +1,27 @@
+# Scales on CPU utilisation relative to the pod's CPU *request* (500m).
+# A pod busy generating sits near 200% of its request, so it scales out quickly under load.
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: tinygpt
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: tinygpt
+  minReplicas: 1
+  maxReplicas: 4
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 70
+  behavior:
+    scaleUp:
+      stabilizationWindowSeconds: 0
+      policies:
+        - {type: Pods, value: 2, periodSeconds: 30}
+    scaleDown:
+      stabilizationWindowSeconds: 120

@@ -43,6 +43,7 @@ def main():
     tok = Tokenizer.from_file(a.tokenizer)
     assert tok.get_vocab_size() < 65536
     out = Path(a.out_dir)
+    out.mkdir(parents=True, exist_ok=True)
     ns_tr, nt_tr = tokenize_split(tok, a.source, "train", out / "train.bin", a.max_train_stories)
     ns_va, nt_va = tokenize_split(tok, a.source, "validation", out / "val.bin", a.max_val_stories)
     meta = dict(vocab_size=tok.get_vocab_size(), eot_id=tok.token_to_id(EOT),

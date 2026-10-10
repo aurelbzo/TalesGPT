@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tinygpt
+  labels: {app: tinygpt}
+spec:
+  replicas: 1
+  selector:
+    matchLabels: {app: tinygpt}
+  template:
+    metadata:
+      labels: {app: tinygpt}
+    spec:
+      containers:
+        - name: tinygpt
+          image: tinygpt-serve:latest
+          imagePullPolicy: IfNotPresent   # image is loaded into kind with `kind load docker-image`
+          ports:
+            - containerPort: 8000
+          env:
+            - {name: MAX_CONCURRENCY, value: "1"}
+            - {name: TORCH_THREADS,   value: "1"}   # match the CPU limit below
+            - {name: OMP_NUM_THREADS, value: "1"}
+          resources:
+            requests: {cpu: "500m", memory: "512Mi"}
+            limits:   {cpu: "1",    memory: "1Gi"}
+          startupProbe:                    # model load can take a few seconds
+            httpGet: {path: /ready, port: 8000}
+            periodSeconds: 2
+            failureThreshold: 30
+          readinessProbe:                  # only receive traffic once the model is loaded
+            httpGet: {path: /ready, port: 8000}
+            periodSeconds: 5
+          livenessProbe:
+            httpGet: {path: /health, port: 8000}
+            periodSeconds: 10
+            failureThreshold: 3

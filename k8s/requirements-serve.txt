@@ -1,0 +1,5 @@
+# Minimal runtime deps for the Docker image (torch is installed separately, CPU build).
+numpy
+tokenizers>=0.15
+fastapi
+uvicorn[standard]

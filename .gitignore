@@ -5,6 +5,7 @@ __pycache__/
 
 #Environment 
 tgpt/
+data/
 
 # C extensions
 *.so
