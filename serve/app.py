@@ -36,6 +36,7 @@ from tinygpt.utils import load_model, load_tokenizer
 MODEL_PATH = os.getenv("MODEL_PATH", "artifacts/model_int8.pt")
 TOKENIZER_PATH = os.getenv("TOKENIZER_PATH", "artifacts/tokenizer.json")
 MAX_CONCURRENCY = int(os.getenv("MAX_CONCURRENCY", "1"))
+MAX_NEW_TOKENS_CAP = int(os.getenv("MAX_NEW_TOKENS_CAP", "400"))
 DEVICE = os.getenv("DEVICE", "cpu")
 if os.getenv("TORCH_THREADS"):
     torch.set_num_threads(int(os.environ["TORCH_THREADS"]))
