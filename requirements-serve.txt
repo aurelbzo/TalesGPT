@@ -1,0 +1,4 @@
+numpy
+tokenizers>=0.15
+fastapi
+uvicorn[standard]

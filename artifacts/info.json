@@ -1,0 +1,18 @@
+{
+  "config": {
+    "vocab_size": 8192,
+    "n_layer": 8,
+    "n_head": 8,
+    "d_model": 512,
+    "max_seq_len": 512,
+    "hidden_dim": 1408,
+    "rope_theta": 10000.0,
+    "norm_eps": 1e-05
+  },
+  "params_m": 29.89312,
+  "source_ckpt": "runs/base_sft/best.pt",
+  "fp32_mem_mb": 119.703552,
+  "int8_mem_mb": 42.805248,
+  "model_fp32.pt_file_mb": 119.591733,
+  "model_int8.pt_file_mb": 42.703029
+}

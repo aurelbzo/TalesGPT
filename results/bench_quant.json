@@ -1,0 +1,29 @@
+[
+  {
+    "variant": "fp32",
+    "mem_mb": 119.7,
+    "file_mb": 119.6,
+    "val_loss": 1.4095,
+    "ppl": 4.094,
+    "decode_tok_s": 145.3,
+    "prefill_ms": 13.0
+  },
+  {
+    "variant": "int8 (hand-written, weight-only)",
+    "mem_mb": 42.8,
+    "file_mb": 42.7,
+    "val_loss": 1.4095,
+    "ppl": 4.094,
+    "decode_tok_s": 79.1,
+    "prefill_ms": 20.1
+  },
+  {
+    "variant": "int8 (torch dynamic quant)",
+    "mem_mb": "n/a",
+    "file_mb": 47.0,
+    "val_loss": 1.4432,
+    "ppl": 4.234,
+    "decode_tok_s": 197.6,
+    "prefill_ms": 11.9
+  }
+]

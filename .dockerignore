@@ -1,0 +1,6 @@
+tgpt/
+data/
+runs/
+from_kaggle/
+artifacts_smoke/
+artifacts/model_fp32.pt

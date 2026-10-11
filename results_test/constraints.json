@@ -1,0 +1,92 @@
+{
+  "results": {
+    "runs/base/best.pt": {
+      "n": 200,
+      "success_rate": 0.0,
+      "all_words_rate": 0.0,
+      "word_hit_rate": 0.10666666666666667,
+      "dialogue_ok_rate": 0.47,
+      "avg_tokens": 125.02
+    },
+    "runs/base_sft/best.pt": {
+      "n": 200,
+      "success_rate": 0.06,
+      "all_words_rate": 0.06,
+      "word_hit_rate": 0.4,
+      "dialogue_ok_rate": 0.905,
+      "avg_tokens": 189.23
+    }
+  },
+  "examples": {
+    "runs/base/best.pt": [
+      {
+        "prompt": "Write a short story.\nWords: kitty, played, polish\nDialogue: yes\nStory:\n",
+        "story": "From now on, Wheel!\"\n\nWheel: \nWheel!\n\nWheel:\nWonder!\n\nWonder!\n\nWheel!\n\nWonder: Wow!! It looks so nice.\n\nWonder: Wonder!\n\nWonder!\n\nWonder. Wonder!\n\nWonder: Wonder! Wonder!\n\nWonder!\n\nWonder is a wonderful story.\"\n\nWonder: Wonder!\n\nWonder! Wonder!\n\nWonder listens to Wonder. He is very intelligent!",
+        "result": {
+          "word_hits": 0,
+          "n_words": 3,
+          "all_words": false,
+          "dialogue_ok": true,
+          "success": false
+        }
+      },
+      {
+        "prompt": "Write a short story.\nWords: bird, asked, until\nDialogue: yes\nStory:\n",
+        "story": "\nWongo!\nWesto!\n\nWesto:\n\nWingso!\n\nWingso was right.\n\nWhen he finished his story, Wingso said:\n\nWingso:\n\nWingso!\n\nWingso was having so much fun. He loved learning new things, and he was happy to share it with his friends.",
+        "result": {
+          "word_hits": 0,
+          "n_words": 3,
+          "all_words": false,
+          "dialogue_ok": false,
+          "success": false
+        }
+      },
+      {
+        "prompt": "Write a short story.\nWords: daisy, knew, watch\nDialogue: no\nStory:\n",
+        "story": "Word is not a word. It is a person's story. The story teaches the people that love is a powerful word.",
+        "result": {
+          "word_hits": 0,
+          "n_words": 3,
+          "all_words": false,
+          "dialogue_ok": true,
+          "success": false
+        }
+      }
+    ],
+    "runs/base_sft/best.pt": [
+      {
+        "prompt": "Write a short story.\nWords: kitty, played, polish\nDialogue: yes\nStory:\n",
+        "story": "Once upon a time, there was a little girl named Lily. She loved to play with her toys and watch the birds fly in the sky. One day, she found a shiny penny on the ground. She was so happy and showed it to her mom.\n\nBut her mom warned her, \"Be careful with the penny, it's very valuable. You might lose it or get angry.\" Lily listened to her mom and put the penny back on the ground.\n\nLater that day, Lily was playing with her dolls. Suddenly, her little brother came in and saw the penny. He wanted it for himself, but Lily said, \"No, it's mine. I found it first.\" Her brother got angry and started to",
+        "result": {
+          "word_hits": 1,
+          "n_words": 3,
+          "all_words": false,
+          "dialogue_ok": true,
+          "success": false
+        }
+      },
+      {
+        "prompt": "Write a short story.\nWords: bird, asked, until\nDialogue: yes\nStory:\n",
+        "story": "Once upon a time, there was a little bird named Tweety. Tweety was very hungry and wanted to eat some yummy seeds to eat. But Tweety was also very hungry and didn't know how to get there. \n\nThen, Tweety saw a big tree with lots of seeds. Tweety decided to gather the seeds and eat them. Tweety ate and ate until the seeds were gone. \n\nTweety learned that it's important to find food when it's hungry, even if it's not what you seem. Sandy also learned that it's important to find food so that it's not too hard to eat.",
+        "result": {
+          "word_hits": 2,
+          "n_words": 3,
+          "all_words": false,
+          "dialogue_ok": false,
+          "success": false
+        }
+      },
+      {
+        "prompt": "Write a short story.\nWords: daisy, knew, watch\nDialogue: no\nStory:\n",
+        "story": "Once upon a time, there was a little girl named Lily. Lily loved to play outside in the garden. One day, she saw a butterfly flying around. She wanted to catch it, but it flew away. \n\nLily was sad because she really wanted to catch the butterfly. She went to her mom and told her about the butterfly. Her mom said, \"Don't worry, Lily. Let's watch the butterfly together.\" \n\nLily and her mom sat down and watched the butterfly fly around the garden. They saw the butterfly land on a flower and then fly away. Lily was happy again because she got to see the butterfly and see it fly away.",
+        "result": {
+          "word_hits": 1,
+          "n_words": 3,
+          "all_words": false,
+          "dialogue_ok": false,
+          "success": false
+        }
+      }
+    ]
+  }
+}
