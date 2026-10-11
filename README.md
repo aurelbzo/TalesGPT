@@ -190,11 +190,11 @@ Image size: **TODO MB**.
 - **Time to first token is almost entirely queueing:** 32 ms alone, then one full request of waiting per user ahead.
 - One replica therefore has a fixed capacity. Serving more users needs **more replicas** (horizontal scaling) or **batching** several requests into one forward pass.
 
-TODO (optional): add `results/loadtest_local-int8.md` (same test without Docker) for comparison.
+TODO : add `results/loadtest_local-int8.md` (same test without Docker) for comparison.
 
 ### Kubernetes
 
-TODO (optional): describe the kind cluster, the Deployment (readiness, liveness and startup probes, CPU requests and limits), the Service and the
+TODO : describe the kind cluster, the Deployment (readiness, liveness and startup probes, CPU requests and limits), the Service and the
 Horizontal Pod Autoscaler, plus what was observed under load (time to scale up, number of replicas, latency before and after).
 
 ## 7. Limitations
@@ -205,7 +205,7 @@ Horizontal Pod Autoscaler, plus what was observed under load (time to scale up, 
 - The hand-written int8 reduces memory but not compute; see the benchmark above.
 - The server handles one request at a time per replica and does no batching. Load tests ran on a laptop, with the client on the same machine, so absolute latencies are indicative.
 
-## 8. What I would do next
+## 8. Future Work
 
 - **Better SFT:** more epochs and a learning-rate sweep, plus tolerance for inflected forms in the checker.
 - **Reinforcement learning:** the constraint checker is a ready-made reward function, so it could drive a GRPO-style policy-optimisation step on top of SFT.
