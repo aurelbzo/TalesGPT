@@ -1,4 +1,4 @@
-# TinyGPT: a language model from scratch, from training to serving
+# TalesGPT: a language model from scratch, from training to serving
 
 A 30M-parameter GPT-style language model **written from scratch in PyTorch**, pretrained on ~490M tokens of
 [TinyStories](https://huggingface.co/datasets/roneneldan/TinyStories), instruction-tuned on a task whose success can be
