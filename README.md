@@ -19,7 +19,7 @@ tokenizer, pretraining, fine-tuning, evaluation, inference optimisation and depl
 | **Validation** | loss **1.365**, perplexity **3.92** |
 | **Instruction tuning** | Dialogue-constraint adherence **47% → 90.5%**; required-word coverage **10.7% → 40.0%**; full success **0% → 6%** |
 | **Quantization** | Hand-written int8 weights: **120 MB → 43 MB** in memory (2.8×) |
-| **KV cache** | **TODO×** faster decoding than recomputing the full sequence |
+| **KV cache** | 4.2 to 5.8 times faster decoding than recomputing the full sequence |
 | **Serving** | Streaming FastAPI server in Docker: **≈ 37 tokens/s per replica** (2 CPUs); latency grows linearly with concurrent users, which motivates horizontal scaling |
 
 ---
