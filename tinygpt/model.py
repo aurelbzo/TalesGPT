@@ -7,10 +7,10 @@ import torch.nn.functional as F
 
 @dataclass
 class GPTConfig:
-    vocab_size: int = 8192
+    vocab_size: int = 8192 #We can go up to 65536-sized vocabularies.
     n_layer: int = 8
     n_head: int = 8
-    d_model: int = 512
+    d_model: int = 512 #Token embedding dimension
     max_seq_len: int = 512
     hidden_dim: int = 0
     rope_theta: float = 10000.0
@@ -56,7 +56,7 @@ def precompute_rope(head_dim: int, max_seq_len: int, theta: float):
 def apply_rope(x: torch.Tensor, cos: torch.Tensor, sin: torch.Tensor) -> torch.Tensor:
     xf = x.float()
     x1, x2 = xf.chunk(2, dim=-1)
-    out = torch.cat((x1 * cos - x2 * sin, x1 * sin + x2 * cos), dim=-1)
+    out = torch.cat((x1 * cos - x2 * sin, x1 * sin + x2 * cos), dim=-1) #Apply block diagonal rotation matrix
     return out.type_as(x)
 
 class KVCache:
